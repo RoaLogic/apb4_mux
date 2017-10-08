@@ -6,5 +6,5 @@ The APB4 Mux enables a single APB4 Master to communicate with multiple APB4 slav
 
 ## Documentation
 
-[Datasheet](APB4-Multiplexer)
+[Datasheet](DATASHEET.md)
 
