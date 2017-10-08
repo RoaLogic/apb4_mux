@@ -63,7 +63,7 @@ The APB4 Multiplexer generates a user-defined number (‘n’) of Slave Interfac
 Address Space Configuration
 ---------------------------
 
-Each Slave Port has an Address Base (`SLV_ADDR[n]`) and Address Mask (`SLV_MASK[n]`) port. Together these set the address range covered by each Slave Port. (See section 4.3.5)
+Each Slave Port has an Address Base (`SLV_ADDR[n]`) and Address Mask (`SLV_MASK[n]`) port. Together these set the address range covered by each Slave Port.
 
 ![image](assets/img/APB4-Mux-Sig.png)
 
