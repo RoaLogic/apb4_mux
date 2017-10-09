@@ -63,7 +63,7 @@ The APB4 Multiplexer generates a user-defined number (‘n’) of Slave Interfac
 Address Space Configuration
 ---------------------------
 
-Each Slave Port has an Address Base (`SLV_ADDR[n]`) and Address Mask (`SLV_MASK[n]`) port. Together these set the address range covered by each Slave Port.
+Each Slave Port has an Address Base (`SLV_ADDR[n]`) and Address Mask (`SLV_MASK[n]`) port. Together these set the address range covered by each Slave Port. (See section 4.3.5)
 
 ![image](assets/img/APB4-Mux-Sig.png)
 
@@ -77,8 +77,8 @@ Introduction
 
 The Roa Logic APB4 Multiplexer is a fully configurable interconnect IP to enable an APB4 Master to communicate with multiple APB4 slaves (i.e. peripherals). The core parameters and configuration options are described below.
 
-| Parameter    |  Type   | Default | Description                             |
-| :----------- | :-----: | :-----: | :-------------------------------------- |
+| Parameter    |   Type  | Default | Description                             |
+|:-------------|:-------:|:-------:|:----------------------------------------|
 | `SLAVES`     | Integer |    8    | Number of attached slaves (peripherals) |
 | `PADDR_SIZE` | Integer |    8    | Address Bus Width                       |
 | `PDATA_SIZE` | Integer |    8    | Read Data Bus Width                     |
@@ -104,9 +104,9 @@ Global Signals
 The following common signals are shared between all devices on the APB4 bus.
 
 | Port      | Size | Direction | Description                   |
-| :-------- | :--: | :-------: | :---------------------------- |
-| `PRESETn` |  1   |   Input   | Asynchronous active low reset |
-| `PCLK`    |  1   |   Input   | Clock Input                   |
+|:----------|:----:|:---------:|:------------------------------|
+| `PRESETn` |   1  |   Input   | Asynchronous active low reset |
+| `PCLK`    |   1  |   Input   | Clock Input                   |
 
 ### PRESETn
 
@@ -122,12 +122,12 @@ Master Interface
 The APB4 Interface decodes the signaling of an APB4 bus master and therefore implements a subset of a regular APB4 Slave Interface.
 
 | Port          |     Size     | Direction | Description              |
-| :------------ | :----------: | :-------: | :----------------------- |
-| `MST_PSEL`    |      1       |   Input   | Peripheral Select        |
+|:--------------|:------------:|:---------:|:-------------------------|
+| `MST_PSEL`    |       1      |   Input   | Peripheral Select        |
 | `MST_PADDR`   | `PADDR_SIZE` |   Input   | Address Bus              |
-| `MST_PRDATA`  | `PDATA_SIZE` |  Output   | Read Data Bus            |
-| `MST_PREADY`  |      1       |  Output   | Transfer Ready           |
-| `MST_PSLVERR` |      1       |  Output   | Transfer Error Indicator |
+| `MST_PRDATA`  | `PDATA_SIZE` |   Output  | Read Data Bus            |
+| `MST_PREADY`  |       1      |   Output  | Transfer Ready           |
+| `MST_PSLVERR` |       1      |   Output  | Transfer Error Indicator |
 
 ### MST\_PSEL
 
@@ -159,11 +159,11 @@ The Slave Interface provides the following signals *for each* individual periphe
 > **Note:** Each individual port name is referenced by the index ‘n’, where ‘n’ is an integer value in the range 0 to `SLAVES-1`. E.g. `SLV_PSEL[2]` This nomenclature is used throughout this datasheet
 
 | Port             |     Size     | Direction | Description              |
-| :--------------- | :----------: | :-------: | :----------------------- |
-| `SLV_PSEL[n]`    |      1       |  Output   | Peripheral Select        |
+|:-----------------|:------------:|:---------:|:-------------------------|
+| `SLV_PSEL[n]`    |       1      |   Output  | Peripheral Select        |
 | `SLV_PRDATA[n]`  | `PDATA_SIZE` |   Input   | Read Data Bus            |
-| `SLV_PREADY[n]`  |      1       |   Input   | Transfer Ready Input     |
-| `SLV_PSLVERR[n]` |      1       |   Input   | Transfer Error Indicator |
+| `SLV_PREADY[n]`  |       1      |   Input   | Transfer Ready Input     |
+| `SLV_PSLVERR[n]` |       1      |   Input   | Transfer Error Indicator |
 | `SLV_ADDR[n]`    | `PADDR_SIZE` |   Input   | Transfer Ready Input     |
 | `SLV_MASK[n]`    | `PADDR_SIZE` |   Input   | Transfer Error Indicator |
 
@@ -196,9 +196,9 @@ Resources
 
 Below are some example implementations for various platforms. All implementations are push button, no effort has been undertaken to reduce area or improve performance.
 
-| Platform   | DFF  | Logic Cells | Memory | Configuration                            |
-| :--------- | :--- | :---------- | :----- | :--------------------------------------- |
-| Cyclone-IV | 0    | 84          | 0      | `SLAVES=23`, `PADDR_SIZE=16`, `PDATA_SIZE=8` |
+| Platform   | DFF | Logic Cells | Memory | Configuration                                |
+|:-----------|:----|:------------|:-------|:---------------------------------------------|
+| Cyclone-IV | 0   | 84          | 0      | `SLAVES=23`, `PADDR_SIZE=16`, `PDATA_SIZE=8` |
 
 References
 ==========
@@ -207,7 +207,7 @@ Revision History
 ================
 
 | Date        | Rev. | Comments        |
-| :---------- | :--- | :-------------- |
+|:------------|:-----|:----------------|
 | 01-Feb-2017 | 1.0  | Initial Release |
 |             |      |                 |
 |             |      |                 |
