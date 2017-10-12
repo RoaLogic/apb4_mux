@@ -20,11 +20,14 @@ done
 # Generate new Markdown
 cd ..
 pandoc 	--atx-headers \
+		--base-header-level=2 \
+		--number-sections \
 		--default-image-extension=png \
+		--file-scope \
+		--toc \
+		--toc-depth=3 \
 		-t markdown_github \
 		-B markdown/frontmatter.md \
-		--toc \
-		--toc-depth=1 \
 		-o ../DATASHEET.md \
 		APB4-Multiplexer-Markdown.tex
 
