@@ -3,23 +3,14 @@ title: APB4 Multiplexer
 category: Datasheet
 author: Roa Logic
 ---
-# APB4 Multiplexer
+# APB4 Multiplexer Datasheet
 
 ## Contents
 
 -   [Introduction](#introduction)
-    -   [Features](#features)
 -   [Specifications](#specifications)
-    -   [Functional Description](#functional-description)
-    -   [Master Interface](#master-interface)
-    -   [Slave Interfaces](#slave-interfaces)
-    -   [Address Space Configuration](#address-space-configuration)
 -   [Configurations](#configurations)
-    -   [Introduction](#introduction-1)
 -   [Interfaces](#interfaces)
-    -   [Global Signals](#global-signals)
-    -   [Master Interface](#master-interface-1)
-    -   [Slave Interface](#slave-interface)
 -   [Resources](#resources)
 -   [References](#references)
 -   [Revision History](#revision-history)

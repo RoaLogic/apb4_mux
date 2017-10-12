@@ -1,5 +1,7 @@
 #!/bin/bash
 
+topfile="APB4-Multiplexer-Markdown"
+
 # Run from markdown directory only
 curdir=${PWD##*/}
 
@@ -25,11 +27,11 @@ pandoc 	--atx-headers \
 		--default-image-extension=png \
 		--file-scope \
 		--toc \
-		--toc-depth=3 \
+		--toc-depth=1 \
 		-t markdown_github \
 		-B markdown/frontmatter.md \
 		-o ../DATASHEET.md \
-		APB4-Multiplexer-Markdown.tex
+		$topfile.tex
 
 cd markdown
 
