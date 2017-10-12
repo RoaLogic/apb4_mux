@@ -4,15 +4,21 @@ category: Datasheet
 author: Roa Logic
 ---
 
-Introduction
-============
+-   [Introduction](#introduction)
+-   [Specifications](#specifications)
+-   [Configurations](#configurations)
+-   [Interfaces](#interfaces)
+-   [Resources](#resources)
+-   [References](#references)
+-   [Revision History](#revision-history)
+
+# Introduction
 
 The *AMBA APB v2.0* bus protocol - commonly referred to as APB4 - defines a low-cost interface that is optimized for minimal power consumption and reduced interface complexity. To enable a single APB4 Master to communicate with *multiple* APB4 Slaves (Peripherals) via a common bus, certain signals require multiplexing – the Roa Logic APB4 Multiplexer is a fully configurable & parameterized IP to provide this functionality as shown below:
 
 ![APB4 Multiplexer System<span data-label="fig:apb4-mux-sys"></span>](assets/img/APB4-Mux-Sys.png)
 
-Features
---------
+## Features
 
 -   Full support for *APB version 2.0* (APB4) protocol
 
@@ -24,11 +30,9 @@ Features
 
 -   Support for user defined address mapping per peripheral
 
-Specifications
-==============
+# Specifications
 
-Functional Description
-----------------------
+## Functional Description
 
 The Roa Logic APB4 Multiplexer is a highly configurable, fully parameterized soft IP to enable a single APB4 based Master (Host) to communicate with multiple APB4 Slaves (Peripherals). It is fully compliant with the *AMBA APB v2.0* bus protocols.
 
@@ -42,8 +46,7 @@ The multiplexer functions as follows:
 
 -   Peripheral-specific control signals `SLV_PSLVERR[n]`and `SLV_READY[n]`, together with the Read Data Bus signals `SLV_PRDATA[n]` during a read transaction, are then multiplexed back to the Master Interface.
 
-Master Interface
-----------------
+## Master Interface
 
 The APB4 Multiplexer Master Interface consists of the following subset of APB4 bus signals:
 
@@ -55,8 +58,7 @@ The APB4 Multiplexer Master Interface consists of the following subset of APB4 b
 
 All other APB4 bus signals are connected directly to each peripheral
 
-Slave Interfaces
-----------------
+## Slave Interfaces
 
 The APB4 Multiplexer generates a user-defined number (‘n’) of Slave Interfaces that consist of the following subset of APB4 bus signals:
 
@@ -66,8 +68,7 @@ The APB4 Multiplexer generates a user-defined number (‘n’) of Slave Interfac
 
 -   `PRDATA[n]` read data bus inputs from each peripheral which is multiplexed to the Master Interface
 
-Address Space Configuration
----------------------------
+## Address Space Configuration
 
 Each Slave Port has an Address Base (`SLV_ADDR[n]`) and Address Mask (`SLV_MASK[n]`) port. Together these set the address range covered by each Slave Port. (See section 4.3.5)
 
@@ -75,11 +76,9 @@ Each Slave Port has an Address Base (`SLV_ADDR[n]`) and Address Mask (`SLV_MASK[
 
 While the Address Base and Address Mask values may be changed dynamically, assigning static values according to a predefined address map is typical.
 
-Configurations
-==============
+# Configurations
 
-Introduction
-------------
+## Introduction
 
 The Roa Logic APB4 Multiplexer is a fully configurable interconnect IP to enable an APB4 Master to communicate with multiple APB4 slaves (i.e. peripherals). The core parameters and configuration options are described below.
 
@@ -101,11 +100,9 @@ The `PADDR_SIZE` parameter specifies the width of the address bus for the APB4 I
 
 The `PDATA_SIZE` parameter specifies the width of the APB4 data bus. This parameter must equal an integer multiple of bytes. The Master and all peripherals sharing the APB4 Multiplexer are expected to have the same data width.
 
-Interfaces
-==========
+# Interfaces
 
-Global Signals
---------------
+## Global Signals
 
 The following common signals are shared between all devices on the APB4 bus.
 
@@ -122,8 +119,7 @@ When the active low asynchronous `PRESETn` input is asserted (‘0’), the APB4
 
 `PCLK` is the APB4 interface system clock. All internal logic for the APB4 interface operates at the rising edge of this system clock and APB4 bus timings are related to the rising edge of `PCLK`.
 
-Master Interface
-----------------
+## Master Interface
 
 The APB4 Interface decodes the signaling of an APB4 bus master and therefore implements a subset of a regular APB4 Slave Interface.
 
@@ -157,8 +153,7 @@ The bus width must be byte-aligned and is defined by the `PDATA_SIZE` parameter.
 
 `MST_PSLVERR` indicates a failed data transfer to the APB4 Master when asserted (‘1’) and is driven by the selected peripheral via the APB4 Multiplexer.
 
-Slave Interface
----------------
+## Slave Interface
 
 The Slave Interface provides the following signals *for each* individual peripheral. The number of peripherals supported, and therefore instances of the following signals, is controlled by the SLAVES parameter (see section 0).
 
@@ -197,8 +192,7 @@ The bus width must be byte-aligned and is defined by the `PDATA_SIZE` parameter.
 
 As a consequence, these ports are typically assigned hard-coded values rather than connected to other logic in the design.
 
-Resources
-=========
+# Resources
 
 Below are some example implementations for various platforms. All implementations are push button, no effort has been undertaken to reduce area or improve performance.
 
@@ -206,11 +200,9 @@ Below are some example implementations for various platforms. All implementation
 |:-----------|:----|:------------|:-------|:---------------------------------------------|
 | Cyclone-IV | 0   | 84          | 0      | `SLAVES=23`, `PADDR_SIZE=16`, `PDATA_SIZE=8` |
 
-References
-==========
+# References
 
-Revision History
-================
+# Revision History
 
 | Date        | Rev. | Comments        |
 |:------------|:-----|:----------------|
