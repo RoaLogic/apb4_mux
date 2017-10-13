@@ -3,24 +3,15 @@
 Below are some example implementations for various platforms. All implementations are push button, no effort has been undertaken to
 reduce area or improve performance.
 
-\begin{longtable}[]{@{}lllll@{}}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+
+\begin{longtable}[]{@{\extracolsep{\fill}}lcccp{5cm}@{}}
 	\toprule
 	Platform & DFF & Logic Cells & Memory & Configuration\tabularnewline
 	\midrule
-	\endhead
-	\begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-		Cyclone-IV\strut
-	\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-		0\strut
-	\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-		84\strut
-	\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-		0\strut
-	\end{minipage} & \begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
-		\texttt{SLAVES=23}, 		
-		\texttt{PADDR\_SIZE=16}, 		
-		\texttt{PDATA\_SIZE=8}\strut
-	\end{minipage}\tabularnewline
+	\endhead	
+		Cyclone-IV & 0 & 84 & 0 & \texttt{SLAVES=23},\newline \texttt{PADDR\_SIZE=16},\newline\texttt{PDATA\_SIZE=8}\tabularnewline
 	\bottomrule
 	\caption{Resource Utilization Examples}
 \end{longtable}

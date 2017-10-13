@@ -7,6 +7,7 @@ Fully parameterized APB4 Slave multiplexer. The APB4 Mux enables a single APB4 M
 ## Documentation
 
 - [Datasheet](DATASHEET)
+  - [PDF Format](docs/APB4-Multiplexer-Datasheet.pdf)
 
 ## Features
 

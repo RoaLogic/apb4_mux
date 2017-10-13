@@ -11,7 +11,6 @@ author: Roa Logic
 -   [Specifications](#specifications)
 -   [Configurations](#configurations)
 -   [Interfaces](#interfaces)
--   [Resources](#resources)
 -   [References](#references)
 -   [Revision History](#revision-history)
 
@@ -75,7 +74,7 @@ The APB4 Multiplexer generates a user-defined number (‘n’) of Slave Interfac
 
 Each Slave Port has an Address Base (`SLV_ADDR[n]`) and Address Mask (`SLV_MASK[n]`) port. Together these set the address range covered by each Slave Port. (See section 4.3.5)
 
-![image](assets/img/APB4-Mux-Sig.png)
+<img src="assets/img/APB4-Mux-Sig.png" alt="image" style="width:85.0%" />
 
 While the Address Base and Address Mask values may be changed dynamically, assigning static values according to a predefined address map is typical.
 
@@ -195,21 +194,13 @@ The bus width must be byte-aligned and is defined by the `PDATA_SIZE` parameter.
 
 As a consequence, these ports are typically assigned hard-coded values rather than connected to other logic in the design.
 
-## Resources
-
-Below are some example implementations for various platforms. All implementations are push button, no effort has been undertaken to reduce area or improve performance.
-
-| Platform   | DFF | Logic Cells | Memory | Configuration                                |
-|:-----------|:----|:------------|:-------|:---------------------------------------------|
-| Cyclone-IV | 0   | 84          | 0      | `SLAVES=23`, `PADDR_SIZE=16`, `PDATA_SIZE=8` |
-
 ## References
 
 ## Revision History
 
 | Date        | Rev. | Comments        |
-|:------------|:-----|:----------------|
-| 01-Feb-2017 | 1.0  | Initial Release |
+|:------------|:----:|:----------------|
+| 13-Oct-2017 |  1.0 | Initial Release |
 |             |      |                 |
 |             |      |                 |
 |             |      |                 |
