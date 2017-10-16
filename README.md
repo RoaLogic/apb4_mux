@@ -28,7 +28,7 @@ Compliant to the RISC-V Privilege Level 1.9, 1.9.1, 1.10 specifications
 
 ## License
 
-Released under the RoaLogic [Non-Commerical License](/LICENSE.md)
+Released under the RoaLogic [Non-Commercial License](/LICENSE.md)
 
 ## Dependencies
 Requires the Roa Logic [AHB3Lite Package](). This is are included as a submodule.
