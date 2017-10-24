@@ -1,5 +1,7 @@
 # APB4 Multiplexer
-Fully parameterized APB4 Slave multiplexer. The APB4 Mux enables a single APB4 Master to communicate with multiple APB4 slaves (peripherals).
+The [AMBA APB v2.0 bus protocol](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html) – commonly referred to as APB4 – defines a low-cost interface that 
+is optimized for minimal power consumption and reduced interface complexity. To enable a single APB4 Master to communicate with *multiple* APB4 Slaves (Peripherals) via a common bus, certain signals require 
+multiplexing – the Roa Logic APB4 Multiplexer is a fully configurable & parameterized IP to provide this functionality.
 
 
 ![Example Implementation](assets/img/APB4-Mux-Sys.png)
@@ -11,15 +13,15 @@ Fully parameterized APB4 Slave multiplexer. The APB4 Mux enables a single APB4 M
 
 ## Features
 
-- AHB-Lite Interface with programmable address and data width
-- User defined number of Interrupt Sources & Targets
-- User defined priority level per Interrupt Source
-- Interrupt masking per target via Priority Threshold support
-- User defined Interrupt Pending queue depth per source
+- Full support for [APB version 2.0 (APB4) protocol ](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html)
+- Fully parameterized IP with:
+  - User Configurable number of peripherals supported
+  - User Configurable address and data widths
+- Support for user defined address mapping per peripheral
 
 ## Compatibility
 
-Compliant to the RISC-V Privilege Level 1.9, 1.9.1, 1.10 specifications
+Compatible with  [APB version 2.0 (APB4) protocol ](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html) 
 
 ## Interfaces
 
@@ -32,4 +34,4 @@ Released under the RoaLogic [Non-Commercial License](/LICENSE.md)
 
 ## Dependencies
 Requires the Roa Logic [AHB3Lite Package](). This is are included as a submodule.
-After cloning the RV12 git repository, perform a 'git submodule init' to download the submodule.
+After cloning the repository, perform a 'git submodule init' to download the submodule.
