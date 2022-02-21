@@ -87,6 +87,27 @@ module apb_mux #(
   //
   // Module Body
   //
+
+//synopsys translate_off
+initial
+begin
+    #1;
+    $display("\n\n");
+    $display ("------------------------------------------------------------");
+    $display (" ,------.                    ,--.                ,--.       ");
+    $display (" |  .--. ' ,---.  ,--,--.    |  |    ,---. ,---. `--' ,---. ");
+    $display (" |  '--'.'| .-. |' ,-.  |    |  |   | .-. | .-. |,--.| .--' ");
+    $display (" |  |\\  \\ ' '-' '\\ '-'  |    |  '--.' '-' ' '-' ||  |\\ `--. ");
+    $display (" `--' '--' `---'  `--`--'    `-----' `---' `-   /`--' `---' ");
+    $display ("- APB4 Multiplexer Configuration --------  `---'  ----------");
+    $display ("- Module: %m");
+
+    for (int n=0; n < SLAVES; n++)
+      $display ("slv_addr[%3d]=%32b (%8h), slv_mask[%3d]=%32b (%8h)", n, slv_addr[n], slv_addr[n], n, slv_mask[n], slv_mask[n]);
+end
+//synopsys translate_on
+
+
 generate
     for (s=0;s<SLAVES;s++)
     begin: aa
