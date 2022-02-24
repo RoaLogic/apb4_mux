@@ -103,7 +103,7 @@ begin
     $display ("- Module: %m");
 
     for (int n=0; n < SLAVES; n++)
-      $display ("slv_addr[%3d]=%32b (%8h), slv_mask[%3d]=%32b (%8h)", n, slv_addr[n], slv_addr[n], n, slv_mask[n], slv_mask[n]);
+      $display ("slv_addr[%3d]=%32b (0x%8h), slv_mask[%3d]=%32b (0x%8h)", n, slv_addr[n], slv_addr[n], n, slv_mask[n], slv_mask[n]);
 end
 //synopsys translate_on
 
