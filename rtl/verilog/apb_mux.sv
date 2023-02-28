@@ -37,7 +37,9 @@
 /////////////////////////////////////////////////////////////////
 
  
-module apb_mux #(
+module apb_mux
+import ahb3lite_pkg::*;
+#(
   parameter  PADDR_SIZE = 8,
              PDATA_SIZE = 8,
              SLAVES     = 8
@@ -66,8 +68,6 @@ module apb_mux #(
   //
   // Constants
   //
-  import ahb3lite_pkg::*;
-
 
   //////////////////////////////////////////////////////////////////
   //
